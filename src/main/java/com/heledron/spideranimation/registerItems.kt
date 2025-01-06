@@ -14,7 +14,7 @@ import kotlin.math.roundToInt
 fun registerItems() {
     CustomItemRegistry.items += CustomItem(
         id = "spider",
-        defaultItem = createNamedItem(Material.NETHERITE_INGOT, "Spider"),
+        defaultItem = createNamedItem(Material.NETHERITE_INGOT, "Spider Creator"),
         onRightClick = { player ->
             val spider = AppState.spider
             if (spider == null) {
