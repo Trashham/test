@@ -17,7 +17,6 @@ fun registerItems() {
         defaultItem = createNamedItem(Material.NETHERITE_INGOT, "Spider Creator"),
         onRightClick = { player ->
             val spider = AppState.spider
-            if (spider == null) {
                 val yawIncrements = 45.0f
                 val yaw = player.location.yaw// + 180.0f;
                 val yawRounded = (yaw / yawIncrements).roundToInt() * yawIncrements
@@ -29,10 +28,6 @@ fun registerItems() {
                 playSound(hitLocation, Sound.BLOCK_NETHERITE_BLOCK_PLACE, 1.0f, 1.0f)
                 AppState.createSpider(hitLocation)
                 sendActionBar(player, "Spider created")
-            } else {
-                playSound(player.location, Sound.ENTITY_ITEM_FRAME_REMOVE_ITEM, 1.0f, 0.0f)
-                AppState.spider = null
-                sendActionBar(player, "Spider removed")
             }
         }
     )
